@@ -22,8 +22,8 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
           <ResponsiveLogo
             mobileVariant="text"
-            tabletVariant="full"
-            desktopVariant="full"
+            tabletVariant="text"
+            desktopVariant="text"
             mobileSize="sm"
             tabletSize="md"
             desktopSize="md"

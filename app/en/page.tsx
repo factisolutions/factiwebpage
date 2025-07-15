@@ -21,6 +21,16 @@ export default function HomePageEN() {
       {/* Navigation */}
       <header className="bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm shadow-sm sticky top-0 z-50 border-b border-gray-100 dark:border-gray-800">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+          <ResponsiveLogo
+            mobileVariant="text"
+            tabletVariant="text"
+            desktopVariant="text"
+            mobileSize="sm"
+            tabletSize="md"
+            desktopSize="md"
+            theme="auto"
+          />
+
           <nav className="hidden md:flex items-center space-x-8">
             <Link
               href="#services"
@@ -61,21 +71,7 @@ export default function HomePageEN() {
       <section className="relative py-20 md:py-32 overflow-hidden bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900">
         <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
         <div className="max-w-7xl mx-auto px-6 relative">
-          {/* Logo Section */}
-          <div className="text-center mb-12">
-            <FadeIn>
-              <ResponsiveLogo
-                mobileVariant="full"
-                tabletVariant="full"
-                desktopVariant="full"
-                mobileSize="lg"
-                tabletSize="xl"
-                desktopSize="xl"
-                theme="auto"
-                className="mx-auto"
-              />
-            </FadeIn>
-          </div>
+
           
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <FadeIn>

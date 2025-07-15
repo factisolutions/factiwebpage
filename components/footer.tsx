@@ -38,9 +38,9 @@ export default function Footer() {
             <ScrollReveal>
               <Link href="/" className="block transition-transform hover:scale-105 mb-6">
                 <ResponsiveLogo
-                  mobileVariant="full"
-                  tabletVariant="full"
-                  desktopVariant="full"
+                  mobileVariant="text"
+                  tabletVariant="text"
+                  desktopVariant="text"
                   mobileSize="md"
                   tabletSize="lg"
                   desktopSize="lg"
