@@ -8,13 +8,6 @@ import ContactForm from "@/components/contact-form"
 import ScrollReveal from "@/components/animations/scroll-reveal"
 import FadeIn from "@/components/animations/fade-in"
 
-export const metadata = {
-  title: "FACTI Solutions | AI com Governança - Automação Segura e Estratégica",
-  description:
-    "A FACTI Solutions acelera sua produtividade com IA—sem comprometer segurança e conformidade. Consultoria especializada em IA, governança de dados e automação de processos.",
-  keywords: "IA, Inteligência Artificial, Governança de Dados, Automação, RPA, Consultoria Tech, Segurança de Dados",
-}
-
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
