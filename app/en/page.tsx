@@ -594,8 +594,8 @@ export default function HomePageEN() {
             <div>
               <h4 className="font-semibold mb-4">Contact</h4>
               <div className="space-y-2 text-gray-400">
-                <p>contact@factisolutions.com</p>
-                <p>+55 (11) 99999-9999</p>
+                                  <p>contactus@facti.solutions</p>
+                <p>+55 11 5196-6199</p>
                 <p>São Paulo, SP</p>
               </div>
             </div>
