@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 
-export default function initAxe() {
+export default function Axe() {
   useEffect(() => {
     if (process.env.NODE_ENV !== 'production') {
       import('react-axe').then((axe) => {

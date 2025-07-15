@@ -12,7 +12,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
       {/* Navigation */}
-      <header className="bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm shadow-sm sticky top-0 z-50 border-b border-gray-100 dark:border-gray-800">
+      <header className="bg-[#2A2A2A]/95 backdrop-blur-sm shadow-sm sticky top-0 z-50 border-b border-gray-700">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
           <ResponsiveLogo
             mobileVariant="text"
@@ -21,31 +21,31 @@ export default function HomePage() {
             mobileSize="sm"
             tabletSize="md"
             desktopSize="md"
-            theme="auto"
+            theme="light"
           />
 
           <nav className="hidden md:flex items-center space-x-8">
             <Link
               href="#services"
-              className="text-gray-700 dark:text-gray-300 hover:text-brand-blue font-medium transition-colors"
+              className="text-gray-300 hover:text-brand-teal font-medium transition-colors"
             >
               Serviços
             </Link>
             <Link
               href="#methodology"
-              className="text-gray-700 dark:text-gray-300 hover:text-brand-blue font-medium transition-colors"
+              className="text-gray-300 hover:text-brand-teal font-medium transition-colors"
             >
               Metodologia
             </Link>
             <Link
               href="#about"
-              className="text-gray-700 dark:text-gray-300 hover:text-brand-blue font-medium transition-colors"
+              className="text-gray-300 hover:text-brand-teal font-medium transition-colors"
             >
               Sobre
             </Link>
             <Link
               href="#resources"
-              className="text-gray-700 dark:text-gray-300 hover:text-brand-blue font-medium transition-colors"
+              className="text-gray-300 hover:text-brand-teal font-medium transition-colors"
             >
               Recursos
             </Link>

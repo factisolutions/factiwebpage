@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
 import { ChevronDown, Globe } from "lucide-react"
 import { usePathname } from "next/navigation"
@@ -12,9 +13,9 @@ interface LanguageSelectorProps {
 
 export default function LanguageSelector({ currentLang }: LanguageSelectorProps) {
   const [isOpen, setIsOpen] = useState(false)
-  const [currentLanguage, setCurrentLanguage] = useState("pt")
   const dropdownRef = useRef<HTMLDivElement>(null)
   const pathname = usePathname()
+  const router = useRouter()
 
   // Function to get the equivalent path in the other language
   const getEquivalentPath = (targetLang: string): string => {
@@ -28,8 +29,11 @@ export default function LanguageSelector({ currentLang }: LanguageSelectorProps)
       // For other pages, map English routes to Portuguese equivalents
       const routeMapping: Record<string, string> = {
         "/en/services": "/servicos",
-        "/en/about": "/en/sobre",
+        "/en/about": "/sobre",
         "/en/contact": "/contato",
+        "/en/landing": "/landing",
+        "/en/demo": "/demo",
+        "/en/responsive-logo-demo": "/responsive-logo-demo",
       }
 
       // Check if we have a direct mapping for this path
@@ -52,6 +56,9 @@ export default function LanguageSelector({ currentLang }: LanguageSelectorProps)
         "/servicos": "/en/services",
         "/sobre": "/en/about",
         "/contato": "/en/contact",
+        "/landing": "/en/landing",
+        "/demo": "/en/demo",
+        "/responsive-logo-demo": "/en/responsive-logo-demo",
       }
 
       // Check if we have a direct mapping for this path
@@ -68,20 +75,21 @@ export default function LanguageSelector({ currentLang }: LanguageSelectorProps)
   }
 
   const handleLanguageChange = (langCode: string) => {
-    setCurrentLanguage(langCode)
     setIsOpen(false)
-    // Here you would typically handle the actual language change
-    // For now, we'll just update the state
+    
+    // Only navigate if we're actually changing languages
+    if (langCode !== currentLang) {
+      const targetPath = getEquivalentPath(langCode)
+      router.push(targetPath)
+    }
   }
 
   const languages = [
     { code: "pt", name: "Português" },
     { code: "en", name: "English" },
-    { code: "es", name: "Español" }
   ]
 
   const currentLanguageObj = languages.find((lang) => lang.code === currentLang)
-  const otherLanguages = languages.filter((lang) => lang.code !== currentLang)
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -124,7 +132,7 @@ export default function LanguageSelector({ currentLang }: LanguageSelectorProps)
                   key={lang.code}
                   onClick={() => handleLanguageChange(lang.code)}
                   className={`w-full text-left px-4 py-2 text-sm hover:bg-gray-100 transition-colors ${
-                    currentLanguage === lang.code ? "bg-gray-100 text-brand-blue" : "text-gray-700"
+                    currentLang === lang.code ? "bg-gray-100 text-brand-blue" : "text-gray-700"
                   }`}
                 >
                   {lang.name}

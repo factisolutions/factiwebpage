@@ -4,7 +4,7 @@ export default function Page({ title, description, content }: PageProps) {
   return (
     <div className="bg-gradient-to-tr from-blue-50 via-white to-indigo-100 min-h-screen flex flex-col">
       {/* Navigation */}
-      <header className="bg-white/80 shadow-md sticky top-0 z-50">
+      <header className="bg-[#2A2A2A]/95 backdrop-blur-sm shadow-sm sticky top-0 z-50 border-b border-gray-700">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
           {/* ... */}
         </div>

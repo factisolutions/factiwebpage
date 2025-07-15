@@ -1,5 +1,5 @@
 import type React from "react"
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { Inter, Raleway } from "next/font/google"
 import "./globals.css"
 import MotionConfigProvider from "@/components/animations/motion-config"
@@ -41,9 +41,13 @@ export const metadata: Metadata = {
     title: "FACTI Solutions - Transformando Negócios com IA Responsável",
     description: "Especialistas em governança de IA, automação inteligente e transformação digital.",
   },
-  viewport: "width=device-width, initial-scale=1",
-  themeColor: "#00D8D6",
   generator: 'v0.dev'
+}
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#00D8D6",
 }
 
 export default function RootLayout({
