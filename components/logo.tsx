@@ -29,7 +29,8 @@ export default function Logo({
 
   // Determine which logo to use based on theme
   const isDark = theme === "auto" ? resolvedTheme === "dark" : theme === "dark"
-  const logoIcon = isDark ? "/images/facti-logo-light.png" : "/images/facti-logo-dark.png"
+  // Use the available logo files - fallback to the existing ones
+  const logoIcon = isDark ? "/images/facti-icon.png" : "/images/facti-icon.png"
 
   // Enhanced size classes with better proportions
   const sizeClasses = {
@@ -78,7 +79,7 @@ export default function Logo({
       return (
         <div className={`relative ${sizeClasses[size].icon} ${className}`}>
           <Image
-            src={logoIcon || "/placeholder.svg"}
+            src={logoIcon}
             alt="FACTI Solutions Logo"
             fill
             className="object-contain drop-shadow-sm transition-transform hover:scale-105"
@@ -106,7 +107,7 @@ export default function Logo({
         <div className={`flex flex-col items-center space-y-2 ${className}`}>
           <div className={`relative ${sizeClasses[size].icon}`}>
             <Image
-              src={logoIcon || "/placeholder.svg"}
+              src={logoIcon}
               alt="FACTI Solutions Logo"
               fill
               className="object-contain drop-shadow-sm transition-transform hover:scale-105"
@@ -128,6 +129,15 @@ export default function Logo({
     // Full horizontal logo (default) with enhanced spacing and alignment
     return (
       <div className={`flex items-center ${sizeClasses[size].spacing}`}>
+        <div className={`relative ${sizeClasses[size].icon}`}>
+          <Image
+            src={logoIcon}
+            alt="FACTI Solutions Logo"
+            fill
+            className="object-contain drop-shadow-sm transition-transform hover:scale-105"
+            priority
+          />
+        </div>
         <div
           className={`font-raleway font-semibold ${sizeClasses[size].text} ${finalTextColor} ${sizeClasses[size].letterSpacing}`}
         >

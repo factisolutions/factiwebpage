@@ -49,6 +49,15 @@ export default function ResponsiveLogo({
   const currentVariant = isSmallScreen ? mobileVariant : isMediumScreen ? tabletVariant : desktopVariant
   const currentSize = isSmallScreen ? mobileSize : isMediumScreen ? tabletSize : desktopSize
 
+  // Size classes for placeholder
+  const sizeClasses = {
+    xs: "h-6",
+    sm: "h-8", 
+    md: "h-10",
+    lg: "h-12",
+    xl: "h-16"
+  }
+
   // Only render after mount to avoid hydration mismatch
   useEffect(() => {
     setMounted(true)
@@ -57,9 +66,7 @@ export default function ResponsiveLogo({
   if (!mounted) {
     // Return a placeholder with the same dimensions to avoid layout shift
     return (
-      <div
-        className={`h-${currentSize === "xs" ? "6" : currentSize === "sm" ? "8" : currentSize === "md" ? "10" : currentSize === "lg" ? "12" : "16"} ${className}`}
-      />
+      <div className={`${sizeClasses[currentSize]} ${className}`} />
     )
   }
 
