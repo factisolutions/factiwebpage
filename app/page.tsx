@@ -12,40 +12,30 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
       {/* Navigation */}
-      <header className="bg-[#2A2A2A]/95 backdrop-blur-sm shadow-sm sticky top-0 z-50 border-b border-gray-700">
+      <header className="bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm shadow-sm sticky top-0 z-50 border-b border-gray-100 dark:border-gray-800">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-          <ResponsiveLogo
-            mobileVariant="text"
-            tabletVariant="full"
-            desktopVariant="full"
-            mobileSize="sm"
-            tabletSize="md"
-            desktopSize="md"
-            theme="light"
-          />
-
           <nav className="hidden md:flex items-center space-x-8">
             <Link
               href="#services"
-              className="text-gray-300 hover:text-brand-teal font-medium transition-colors"
+              className="text-gray-700 dark:text-gray-300 hover:text-brand-blue font-medium transition-colors"
             >
               Serviços
             </Link>
             <Link
               href="#methodology"
-              className="text-gray-300 hover:text-brand-teal font-medium transition-colors"
+              className="text-gray-700 dark:text-gray-300 hover:text-brand-blue font-medium transition-colors"
             >
               Metodologia
             </Link>
             <Link
               href="#about"
-              className="text-gray-300 hover:text-brand-teal font-medium transition-colors"
+              className="text-gray-700 dark:text-gray-300 hover:text-brand-blue font-medium transition-colors"
             >
               Sobre
             </Link>
             <Link
               href="#resources"
-              className="text-gray-300 hover:text-brand-teal font-medium transition-colors"
+              className="text-gray-700 dark:text-gray-300 hover:text-brand-blue font-medium transition-colors"
             >
               Recursos
             </Link>
@@ -64,6 +54,22 @@ export default function HomePage() {
       <section className="relative py-20 md:py-32 overflow-hidden bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900">
         <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
         <div className="max-w-7xl mx-auto px-6 relative">
+          {/* Logo Section */}
+          <div className="text-center mb-12">
+            <FadeIn>
+              <ResponsiveLogo
+                mobileVariant="full"
+                tabletVariant="full"
+                desktopVariant="full"
+                mobileSize="lg"
+                tabletSize="xl"
+                desktopSize="xl"
+                theme="auto"
+                className="mx-auto"
+              />
+            </FadeIn>
+          </div>
+          
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <FadeIn>
               <div className="text-center lg:text-left">

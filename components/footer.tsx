@@ -6,6 +6,7 @@ import ScrollReveal from "./animations/scroll-reveal"
 import React from "react"
 import { Linkedin, Instagram, Mail } from "lucide-react"
 import type { LucideIcon } from "lucide-react"
+import ResponsiveLogo from "./responsive-logo"
 
 const socialLinks: { name: string; href: string; icon: LucideIcon }[] = [
   {
@@ -36,14 +37,15 @@ export default function Footer() {
           <div className="md:col-span-2">
             <ScrollReveal>
               <Link href="/" className="block transition-transform hover:scale-105 mb-6">
-                <div className="flex items-center space-x-3">
-                  <div className="font-raleway font-semibold text-lg text-white tracking-wider">
-                    <span className="inline-block">FACTI</span>
-                    <span className="inline-block ml-2 bg-gradient-to-r from-brand-teal to-brand-blue bg-clip-text text-transparent">
-                      SOLUTIONS
-                    </span>
-                  </div>
-                </div>
+                <ResponsiveLogo
+                  mobileVariant="full"
+                  tabletVariant="full"
+                  desktopVariant="full"
+                  mobileSize="md"
+                  tabletSize="lg"
+                  desktopSize="lg"
+                  theme="light"
+                />
               </Link>
             </ScrollReveal>
 
