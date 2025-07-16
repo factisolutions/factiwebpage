@@ -4,15 +4,20 @@ import Link from "next/link"
 import { motion } from "framer-motion"
 import ScrollReveal from "./animations/scroll-reveal"
 import React from "react"
-import { Linkedin, Instagram, Mail } from "lucide-react"
+import { Linkedin, Instagram, Mail, MessageCircle } from "lucide-react"
 import type { LucideIcon } from "lucide-react"
 import ResponsiveLogo from "./responsive-logo"
 
 const socialLinks: { name: string; href: string; icon: LucideIcon }[] = [
   {
     name: "Instagram",
-    href: "https://instagram.com/facti.solutions",
+    href: "https://www.instagram.com/facti.solutions/?utm_source=ig_web_button_share_sheet",
     icon: Instagram,
+  },
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/company/107015826/admin/dashboard/",
+    icon: Linkedin,
   },
   {
     name: "Email",
@@ -20,9 +25,9 @@ const socialLinks: { name: string; href: string; icon: LucideIcon }[] = [
     icon: Mail,
   },
   {
-    name: "LinkedIn",
-    href: "https://linkedin.com/company/facti-solutions",
-    icon: Linkedin,
+    name: "WhatsApp",
+    href: "https://wa.me/+551151966199",
+    icon: MessageCircle,
   },
 ] as const
 
@@ -54,6 +59,9 @@ export default function Footer() {
             </p>
 
             {/* Social Links */}
+            <div className="mb-4">
+              <h4 className="text-white font-semibold mb-3">Siga-nos nas redes sociais</h4>
+            </div>
             <div className="flex space-x-4">
               {socialLinks.map((social) => (
                 <motion.div
@@ -61,18 +69,17 @@ export default function Footer() {
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <div className="text-gray-400 hover:text-brand-teal transition-colors p-2 rounded-md hover:bg-gray-800">
-                    <a
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={social.name}
-                    >
-                      {social.icon && typeof social.icon === 'function' ? (
-                        React.createElement(social.icon, { className: "w-5 h-5" })
-                      ) : null}
-                    </a>
-                  </div>
+                  <a
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.name}
+                    className="text-gray-400 hover:text-brand-teal transition-colors p-3 rounded-full hover:bg-gray-800 flex items-center justify-center"
+                  >
+                    {social.icon && typeof social.icon === 'function' ? (
+                      React.createElement(social.icon, { className: "w-6 h-6" })
+                    ) : null}
+                  </a>
                 </motion.div>
               ))}
             </div>
@@ -148,6 +155,11 @@ export default function Footer() {
               <p>
                 <a href="tel:+551151966199" className="hover:text-brand-teal transition-colors">
                   +55 11 5196-6199
+                </a>
+              </p>
+              <p>
+                <a href="https://wa.me/+551151966199" target="_blank" rel="noopener noreferrer" className="hover:text-brand-teal transition-colors">
+                  WhatsApp: +55 11 5196-6199
                 </a>
               </p>
               <p>São Paulo, Brasil</p>
