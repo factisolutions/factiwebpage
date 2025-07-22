@@ -73,9 +73,8 @@ export default function ContactForm() {
     }
 
     setIsSubmitting(true)
+    setSubmitError("")
 
-    // The form will be submitted directly to Formspree
-    // We just need to handle the form submission state
     try {
       const form = e.currentTarget
       const formData = new FormData(form)
@@ -267,18 +266,25 @@ export default function ContactForm() {
                 animate={Object.keys(formErrors).length > 0 ? { x: [0, -10, 10, -10, 10, 0] } : {}}
                 transition={Object.keys(formErrors).length > 0 ? { duration: 0.5 } : {}}
               >
-                <div className="flex items-center justify-center">
-                  {isSubmitting ? (
-                    <motion.div
-                      animate={{ rotate: 360 }}
-                      transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                    >
-                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full mr-2" />
-                    </motion.div>
-                  ) : (
-                    "Enviar Mensagem"
-                  )}
-                </div>
+                <Button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full"
+                  size="lg"
+                >
+                  <div className="flex items-center justify-center">
+                    {isSubmitting ? (
+                      <motion.div
+                        animate={{ rotate: 360 }}
+                        transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                      >
+                        <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full mr-2" />
+                      </motion.div>
+                    ) : (
+                      "Enviar Mensagem"
+                    )}
+                  </div>
+                </Button>
               </motion.div>
             </ScrollReveal>
           </form>
